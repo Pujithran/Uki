@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+    
+        <title>Student Profile</title>
+
+    </head>
+
+    <style>
+
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h2{
+            text-align: center; 
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h3{
+            color:rgba(35, 67, 94);
+        }
+        
+        img{
+            width: 100px;
+        }
+
+        .profile{
+            padding: 10px;
+            background-color: rgba(52, 152, 219);
+            color: white; 
+            border: 2px rgba(13, 81, 127) solid;
+        }
+
+        ul{
+            color: green;
+        }
+
+        ol{
+            color: blueviolet;
+        }
+
+        dl{
+            color: chocolate;
+        }
+
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        th{
+            padding-bottom: 3px;
+            padding-top: 3px;
+        }
+
+        body{
+            background-color: rgb(244, 244, 244);
+        }
+
+        fieldset{
+            width: 50%;
+        }
+
+        .rights{
+            background-color: rgba(52, 73, 94);
+            padding: 10px;
+            color: white;
+        }
+    
+    </style>
+
+    <body>
+    
+        <form class="profile">
+            
+            <h2>STUDENT PROFILE</h2>
+
+            <img src="./unknown.jpg" alt="Puhaippadam">
+
+            <h5>Name: <b>Ann</b></h5>
+            <h5>Course: <b>Web Devolopment</b></h5>
+            <h5>Email: <b>ann@gmail.com</b></h5>
+
+        </form>
+
+        <h3>About Me</h3>
+
+        <p>I am a passionate student interested in web devlopment and modern technologies. I enjoy learning new programming languages and building creative projects.</p>
+
+        <h3>Skills</h3>
+
+        <h4>Technical Skills</h4>
+
+        <ul>
+
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+
+        </ul>
+
+        <h4>Learning Path</h4>
+
+        <ol>
+
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+
+        </ol>
+
+        <h4>Technologies</h4>
+
+        <dl>
+
+            <dt><b>HTML</b></dt>
+            <dd>Structure of Web Pages</dd>
+
+            <dt><b>CSS</b></dt>
+            <dd>Styling Web Pages</dd>
+
+            <dt><b>JavaScript</b></dt>
+            <dd>Adds Interactivity</dd>
+
+        </dl>
+
+        <h3>Academic Records</h3>
+
+        <table border="1">
+
+            <tr>
+                <th><b>Subject</b></th>
+                <th><b>Marks</b></th>
+                <th><b>Grade</b></th>
+            </tr>
+
+            <tr>
+                <th>HTML</th>
+                <th>85</th>
+                <th>A</th>
+            </tr>
+
+            <tr>
+                <th>CSS</th>
+                <th>80</th>
+                <th>A</th>
+            </tr>
+
+            <tr>
+                <th>JavaScript</th>
+                <th>75</th>
+                <th>B+</th>
+            </tr>
+        
+            <tr>
+                <th>Database</th>
+                <th>78</th>
+                <th>B+</th>
+            </tr>
+        
+        </table>
+
+        <h3>Student Registration Form</h3>
+
+        <fieldset>
+
+            <form>
+
+                <label>Full Name:</label>
+                <input type="text" placeholder="Enter Full Name">
+
+                <br><br>
+
+                <label>Email:</label>
+                <input type="text" placeholder="Enter Email">
+
+                <br><br>
+
+                <label>Phone Number:</label>
+                <input type="text" placeholder="Enter Phone Number">
+
+                <br><br>
+                
+                <label>Gender:</label>
+                <input type="radio">Male
+                <input type="radio">Female
+
+                <br><br>
+
+                <label>Skills</label>
+                <input type="checkbox">HTML
+                <input type="checkbox">CSS
+                <input type="checkbox">JavaScript
+
+                <br><br>
+
+                <label>Date of Birth:</label>
+                <input type="date">
+
+                <br><br>
+
+                <label>Country:</label>
+                <select name="select" id="country">
+                    <option value="select" selected>Select Country</option>
+                    <option value="SriLanks">Sri Lanka</option>
+                    <option value="India">India</option>
+                </select>
+
+                <br><br>
+
+                <label>Message:</label>
+                <textarea></textarea>
+                
+                <br><br>
+
+                <button>Submit</button>
+                <button>Reset</button>
+
+            </form>
+
+        </fieldset>
+
+        <form class="rights">
+            
+            <p>&copy; 2025 Student Portfoilio. All Rights Reserved</p>
+        
+        </form>
+
+    </body>
+
+</html>

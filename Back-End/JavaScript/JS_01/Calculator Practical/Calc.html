@@ -1,0 +1,78 @@
+<html>
+
+    <head>
+        
+        <title>Calculator</title>
+    
+    </head>
+
+    <body>
+        
+        <table border="1">
+
+            <tr>
+
+                <td colspan="4" id="answer"><h4 ></h4></td>
+
+            </tr>
+
+            <tr>
+
+                <td><button type="button" id="1" style="width: 25;" onclick="appendNumber('1')">1</button></td>
+                <td><button type="button" id="2" style="width: 25;" onclick="appendNumber('2')">2</button></td>
+                <td><button type="button" id="3" style="width: 25;" onclick="appendNumber('3')">3</button></td>
+                <td><button type="button" id="plus" style="width: 25;" onclick="setOperator('+')">+</button></td>
+
+            </tr>
+
+            <tr>
+
+                <td><button type="button" id="4" style="width: 25;" onclick="appendNumber('4')">4</button></td>
+                <td><button type="button" id="5" style="width: 25;" onclick="appendNumber('5')">5</button></td>
+                <td><button type="button" id="6" style="width: 25;" onclick="appendNumber('6')">6</button></td>
+                <td><button type="button" id="minus" style="width: 25;" onclick="setOperator('-')">-</button></td>
+
+            </tr>
+
+            <tr>
+
+                <td><button type="button" id="7" style="width: 25;" onclick="appendNumber('7')">7</button></td>
+                <td><button type="button" id="8" style="width: 25;" onclick="appendNumber('8')">8</button></td>
+                <td><button type="button" id="9" style="width: 25;" onclick="appendNumber('9')">9</button></td>
+                <td><button type="button" id="multi" style="width: 25;" onclick="setOperator('*')">*</button></td>
+
+            </tr>
+
+            <tr>
+
+                <td colspan="2"><button type="button" id="0" style="width: 56px;" onclick="appendNumber('0')">0</button></td>
+                <td><button type="button" id="equal" style="width: 25;" onclick="calculate()">=</button></td>
+                <td><button type="button" id="divi" style="width: 25;" onclick="setOperator('/')">/</button></td>
+
+            </tr>
+
+        </table>
+
+        <script>
+
+            let answer = document.getElementById('answer');
+            
+            function appendNumber(num) {
+                display.value += num;
+            }
+
+            function setOperator(op) {
+                display.value += op;
+            }
+
+            function calculate() {
+                display.answer = eval(display.answer);
+            }
+        
+        </script>
+
+    </body>
+
+</html>
+
+

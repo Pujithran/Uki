@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <title>Document</title>
+
+        <style>
+
+            .box1{
+                height: 100px;
+                width: 100px;
+                background-color: cadetblue;
+                border: 2px solid black;
+                
+                transition:all 3s ease ;
+            }
+
+            .box1:hover{
+                height: 200px;
+                width: 200px;
+                transform: rotate(360deg);
+                background-color: brown;
+            }
+
+            .box2{
+                height: 100px;
+                width: 100px;
+                background-color: rgb(95, 160, 100);
+                border: 2px solid black;
+                margin-top: 60px;
+                line-height: 100px;
+                
+                animation-name: moveBox;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+            }
+
+            .ball{
+                height: 100px;
+                width: 100px;
+                border-radius: 50px;
+                background-color: darkgoldenrod;
+                margin: 200px;
+                border: 2px solid black;
+
+                animation-name: ballBounce;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+
+            .box3{
+                height: 150px;
+                width: 150px;
+                background-color: brown;
+                border: 2px black solid;
+
+                animation-name: boxie;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+
+            @keyframes boxie{
+                0%{
+                    transform: translate(200px, 200px);
+                    background-color: darkcyan;
+                }
+
+                20%{
+                    transform: translate(400px, 0px);
+                    background-color: rgb(139, 0, 0);
+                }
+
+                40%{
+                    transform: translate(600px, 200px);
+                    background-color: rgb(0, 139, 12);
+                }
+
+                60%{                   
+                    transform: translate(800px, 0px);
+                    background-color: rgb(139, 123, 0);
+                }
+
+                80%{
+                    transform: translate(1000px, 200px);
+                    background-color: rgb(139, 0, 109);
+                }
+
+                100%{
+                    transform: translate(1200px, 0px);
+                    background-color: rgb(5, 0, 139);
+                }
+            }
+
+            @keyframes ballBounce{
+                0%{
+
+                }
+
+                50%{
+                    transform: translatey(300px);
+                }
+
+                100%{
+
+                }
+            }
+
+            @keyframes moveBox{
+                0%{
+                    transform: matrix(1, 0, 0, 1, 0, 0);
+                }
+
+                17%{
+                    transform: matrix(1.5, 0, 0, 1.5, 150, 0);
+                }
+
+                25%{
+                    transform: matrix(2, 0, 0, 2, 200, 0);
+                }
+
+                50%{
+                    transform: matrix(4, 0, 0, 4, 400, 0);
+                }
+
+                75%{
+                    transform: matrix(2, 0, 0, 2, 200, 0);
+                }
+
+                82%{
+                    
+                    transform: matrix(1.5, 0, 0, 1.5, 150, 0);
+                }
+
+                100%{
+                    transform: matrix(1, 0, 0, 1, 0, 0);
+                }
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="box1"></div>
+
+        <div class="box2">You are Dumb</div>
+
+        <div class="ball"></div>
+
+        <div class="box3"></div>
+
+    </body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheets GViz Data Display</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        h1 {
+            color: #1a73e8;
+        }
+        #loading {
+            font-weight: 600;
+            color: #d97706;
+            margin-bottom: 20px;
+        }
+        .table-container {
+            overflow-x: auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th, td {
+            padding: 14px 18px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        th {
+            background-color: #1a73e8;
+            color: white;
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #f3f4f6;
+        }
+        pre {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Google Sheet Data</h1>
+    <div id="loading">Fetching data from Google Sheets...</div>
+
+    <!-- Data Table -->
+    <div class="table-container">
+        <table id="data-table" style="display:none;">
+            <thead id="table-head"></thead>
+            <tbody id="table-body"></tbody>
+        </table>
+    </div>
+
+    <!-- JSON Output Section -->
+    <h2 style="margin-top: 40px; color: #475569;">Extracted JSON Output</h2>
+    <pre id="json-output">Waiting for data...</pre>
+
+    <script>
+        // Extracted Spreadsheet ID from your provided URL
+        const sheetId = "1uGRcbHLObyFc4pVs_5wC7HiGhis3xfJZ-h_OwvlyoC4";
+        const gvizUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
+
+        async function fetchSheetData() {
+            try {
+                const response = await fetch(gvizUrl);
+                const text = await response.text();
+                
+                // GViz returns response wrapped in: google.visualization.Query.setResponse({...});
+                // Slice out the JSON object string
+                const jsonString = text.substring(text.indexOf("{"), text.lastIndexOf("}") + 1);
+                const rawData = JSON.parse(jsonString);
+
+                // Convert raw GViz object to clean JSON Array
+                const formattedJson = parseGvizToJson(rawData);
+                
+                // Display JSON in the preview box
+                document.getElementById("json-output").textContent = JSON.stringify(formattedJson, null, 2);
+
+                // Render HTML Table
+                renderTable(formattedJson);
+            } catch (error) {
+                console.error("Error fetching or parsing GViz data:", error);
+                document.getElementById("loading").innerText = "Failed to load sheet data. Ensure the Google Sheet share setting is set to 'Anyone with the link'.";
+            }
+        }
+
+        function parseGvizToJson(gvizData) {
+            const cols = gvizData.table.cols.map(col => col.label || col.id);
+            const rows = gvizData.table.rows;
+
+            return rows.map(row => {
+                let rowData = {};
+                row.c.forEach((cell, index) => {
+                    const colName = cols[index] || `Column_${index + 1}`;
+                    // Use formatted value (cell.f) or raw value (cell.v) safely
+                    rowData[colName] = cell ? (cell.f !== undefined ? cell.f : (cell.v !== null ? cell.v : "")) : "";
+                });
+                return rowData;
+            });
+        }
+
+        function renderTable(data) {
+            if (!data || data.length === 0) {
+                document.getElementById("loading").innerText = "No data found in sheet.";
+                return;
+            }
+
+            const headers = Object.keys(data[0]);
+            const thead = document.getElementById("table-head");
+            const tbody = document.getElementById("table-body");
+
+            // Build headers
+            let headerRow = "<tr>";
+            headers.forEach(header => {
+                headerRow += `<th>${header}</th>`;
+            });
+            headerRow += "</tr>";
+            thead.innerHTML = headerRow;
+
+            // Build data rows
+            let bodyRows = "";
+            data.forEach(row => {
+                bodyRows += "<tr>";
+                headers.forEach(header => {
+                    bodyRows += `<td>${row[header]}</td>`;
+                });
+                bodyRows += "</tr>";
+            });
+            tbody.innerHTML = bodyRows;
+
+            // Hide loading state and display table
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("data-table").style.display = "table";
+        }
+
+        // Run on load
+        fetchSheetData();
+    </script>
+
+</body>
+</html>

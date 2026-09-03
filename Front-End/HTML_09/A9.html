@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+    
+        <title>Document</title>
+
+        <style>
+
+            .block{
+                color: cornflowerblue;
+                background-color: black;
+                display: block;
+                margin: 5px;
+                padding: 5px;
+                text-align: center;
+                text-decoration: none;
+            }
+
+            .inline{
+                background-color: rgb(6, 102, 49);
+                color: brown;
+            }
+
+            .inlineblock{
+                background-color: brown;
+                color: antiquewhite;
+                width: 50%;
+            }
+
+            .none{
+                display: none;
+            }
+
+            .flex{
+                display: flex;
+                gap: 10px;
+                color: bisque;
+            }
+
+            .flexitem1{
+                background-color: black;
+                flex: 2;
+            }
+
+            .flexitem2{
+                background-color: black;
+                flex: 5;
+            }
+
+            .flexitem3{
+                background-color: black;
+                flex: 1;
+            }
+
+            .flexi{
+                display: flex;
+                gap: 10px;
+            }
+
+            .aa{
+                flex: 2;
+            }
+
+            .bb{
+                flex: 1;
+            }
+        </style>
+    
+    </head>
+
+    <body>
+        
+        <a href="#" class="block">Block</a>
+        <a href="#" class="block">Block</a>
+        <a href="#" class="block">Block</a>
+
+        <br>
+
+        <span class="inline">inline</span>
+        <span class="inline">inline</span>
+        <span class="inline">inline</span>
+
+        <br>
+
+        <div class="inlineblock">inlineblock</div>
+        <div class="none">inlineblock</div>
+        <div class="inlineblock">inlineblock</div>
+
+        <br>
+
+        <div class="flex">
+            <div class="flexitem1">Flex 1</div>
+            <div class="flexitem2">Flex Item 2</div>
+            <div class="flexitem3">Flex Item 3 4 5</div>
+        </div>
+
+        <br><br>
+
+        <div class="flexi">
+            <div style="background-color: rgb(255, 109, 133); color: rgb(255, 109, 133);" class="aa">i</div>
+            <div style="background-color: rgb(255, 109, 133); color: rgb(255, 109, 133);" class="bb">i</div>
+        </div>
+
+    </body>
+
+</html>

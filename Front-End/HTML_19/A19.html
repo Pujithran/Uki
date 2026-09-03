@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <title>Document</title>
+
+        <style>
+
+            .red{
+                height: 100px; 
+                width: 100px; 
+                border-radius: 50px; 
+                
+                position: absolute; 
+                left: 10px; 
+                top: 10px;
+
+                animation-name: redbox;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+            }
+
+            .yellow{
+                height: 100px; 
+                width: 100px; 
+                border-radius: 50px; 
+                
+                position: absolute; 
+                left: 10px; 
+                top: 120px;
+
+                animation-name: yellowbox;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+            }
+
+            .green{
+                height: 100px; 
+                width: 100px; 
+                border-radius: 50px; 
+                
+                position: absolute; 
+                left: 10px; 
+                top: 230px;
+
+                animation-name: greenbox;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+            }
+
+            .poll{
+                height: 300px;
+                width: 10px;
+                background-color: black;
+            }
+
+            @keyframes redbox{
+                0%{
+                    background-color: red;
+                }
+
+                32%{
+                    background-color: red;
+                }
+
+                33%{
+                    background-color: grey;
+                }
+
+                99%{
+                    background-color: grey;
+                }
+
+                100%{
+                    background-color: red;
+                }
+            }
+
+            @keyframes yellowbox{
+                0%{
+                    background-color: grey;
+                }
+
+                32%{
+                    background-color: gray;
+                }
+                
+                33%{
+                    background-color: yellow;
+                }
+
+                65%{
+                    background-color: yellow;
+                }
+
+                66%{
+                    background-color: grey;
+                }
+
+                100%{
+                    background-color: grey;
+                }
+            }
+
+            @keyframes greenbox{
+                0%{
+                    background-color: grey;
+                }
+
+                65%{
+                    background-color: grey;
+                }
+
+                66%{
+                    background-color: green;
+                }
+
+                99%{
+                    background-color: green;
+                }
+
+                100%{
+                    background-color: grey;
+                }
+            }
+
+            .circ1{
+                height: 200px;
+                width: 200px;
+                border-radius: 50%;
+                border: 10px solid blue;
+                border-top: 10px solid orange;
+
+                animation-name: rotate;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+            }
+
+            @keyframes rotate{
+                0%{
+                    transform: rotate(0deg);
+                }
+
+                100%{
+                    transform: rotate(360deg);
+                }
+            }
+
+            .rocket{
+                height: 100px;
+                width: 50px;
+                background-color: cadetblue;
+                border: 2px solid black;
+                border-top-left-radius: 25px;
+                border-top-right-radius: 25px;
+
+                animation-name: fly;
+                animation-duration: 7s;
+                animation-iteration-count: infinite;
+            }
+
+            @keyframes fly{
+                0%{}
+
+                60%{transform: matrix(2, 0, 0, 2, 500, 0);}
+
+                61%{transform: matrix(2, 0, 0, 2, 505, 0);}
+
+                62%{transform: matrix(2, 0, 0, 2, 495, 0);}
+
+                63%{transform: matrix(2, 0, 0, 2, 505, 0);}
+
+                64%{transform: matrix(2, 0, 0, 2, 495, 0);}
+
+                65%{transform: matrix(2, 0, 0, 2, 505, 0);}
+
+                66%{transform: matrix(2, 0, 0, 2, 495, 0);}
+
+                67%{transform: matrix(2, 0, 0, 2, 505, 0);}
+
+                68%{transform: matrix(2, 0, 0, 2, 495, 0);}
+
+                69%{transform: matrix(2, 0, 0, 2, 505, 0);}
+
+                70%{transform: matrix(2, 0, 0, 2, 500, 0);}
+
+                100%{transform: matrix(0.5, 0, 0, 0.5, 500, -1000);}
+            }
+
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div style="height: 340px; width: 120px; background-color: black; border-radius: 10px; margin: 140px; position: relative;">
+
+            <div class="red"></div>
+            <div class="yellow"></div>
+            <div class="green"></div>
+
+            <div class="poll"></div>
+
+        </div>
+
+        
+        <div style="margin: 100px; position: relative;">
+
+            <div class="circ1"></div>
+
+        </div>
+
+        
+        <div class="rocket"></div>
+
+
+    </body>
+
+</html>

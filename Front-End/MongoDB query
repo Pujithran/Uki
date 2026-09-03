@@ -1,0 +1,122 @@
+db.students.insertMany([
+    {
+        studentID: S001,
+        name: "Ann",
+        age: 21,
+        gender: "Female",
+        course: "IT",
+        city: "Batticaloa",
+        marks: 85,
+        grade: "A"
+    },
+    {
+        studentID: S002,
+        name: "Rory",
+        age: 22,
+        gender: "Male",
+        course: "Computer Science",
+        city: "Jaffna",
+        marks: 72,
+        grade: "B"
+    },
+    {
+        studentID: S003,
+        name: "Kamal",
+        age: 20,
+        gender: "Male",
+        course: "Software Engineering",
+        city: "Kandy",
+        marks: 91,
+        grade: "A"
+    },
+    {
+        studentID: S004,
+        name: "Kumar",
+        age: 23,
+        gender: "Male",
+        course: "IT",
+        city: "Colombo",
+        marks: 68,
+        grade: "C"
+    },
+    {
+        studentID: S005,
+        name: "Emma",
+        age: 21,
+        gender: "Female",
+        course: "Data Science",
+        city: "Batticaloa",
+        marks: 78,
+        grade: "A"
+    },
+    {
+        studentID: S06,
+        name: "Boby",
+        age: 22,
+        gender: "Female",
+        course: "Computer Science",
+        city: "Jaffna",
+        marks: 95,
+        grade: "A"
+    }
+])
+
+
+
+db.students.find()
+
+
+
+db.students.find({studentID: "S003"})
+
+
+
+db.students.find({gender: "Female"})
+
+
+
+db.students.find({gender: "Male"})
+
+
+
+db.students.find({city: "Batticaloa"})
+
+
+
+db.students.find({course: "IT"})
+
+
+
+db.students.find({gender: "Computer Science"})
+
+
+
+db.students.find({ marks: { $eq: 72} })
+
+
+
+db.students.find({course: {$ne:"IT"}})
+
+
+
+db.students.find({marks: {$gt: 90}})
+
+
+
+db.students.find({marks: {$gte: 78}})
+
+
+
+db.students.find({age: {$lt: 21}})
+
+
+
+db.students.find({age: {$lte: 22}})
+
+
+
+db.students.find({city: {$eq: "Batticaloa"}})
+
+
+
+db.students.find({})
