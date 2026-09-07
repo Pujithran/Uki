@@ -2,6 +2,7 @@ import express from "express";
 import dotEnv from "dotenv";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
+import userRoute from "./routers/userRoute"
 
 dotEnv.config();
 
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 5000;
 const MONGOURL = process.env.MONGOURL
 
 app.use(bodyParser.json())
+app.use("/api/user",userRoute);
 
 mongoose.connect(MONGOURL).then(()=>{
     console.log("Database connected successfully")

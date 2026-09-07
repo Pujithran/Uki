@@ -16,3 +16,15 @@ export const create = async(req,res) => {
         res.status(500).json({error:"Internal server error."})
     }
 }
+
+export const getAllData = async(req,res) => {
+    try{
+        const allData = await user.find();
+        if(allData){
+            return res.status(200).json(allData);
+        }
+        return res.status(400).json({message:"No Data exist"});
+    }catch(error){
+        res.status(500).json({error:"Internal Server Error"});
+    }
+}
