@@ -2,7 +2,7 @@ import express from "express";
 import dotEnv from "dotenv";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
-import userRoute from "./routers/userRoute"
+import userRoute from "./routers/userRoute.js"
 
 dotEnv.config();
 

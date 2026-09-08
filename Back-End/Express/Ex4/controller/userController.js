@@ -1,5 +1,5 @@
 import { json } from "body-parser";
-import user from "../model/userModel"
+import user from "../model/userModel.js"
 
 export const create = async(req,res) => {
     try{
